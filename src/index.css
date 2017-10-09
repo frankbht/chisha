@@ -113,13 +113,7 @@ input:focus {
 .item-list {
   flex: 0 70%;
 }
-form {
-  margin:10px 700px;
-}
 
-button {
-  margin:0 700px;
-}
 .fix-btn {
   position: absolute;
   min-width: 100px;
@@ -127,12 +121,10 @@ button {
   bottom: 20px;
 }
 
-<<<<<<< HEAD
 .checkbox-group *{
   vertical-align: middle;
 }
 
-=======
 .colorfuldisplay{
   height: 40px;
   width: 40px;
@@ -152,4 +144,3 @@ button {
   border-radius: 7px;
   text-decoration: none;
 }
->>>>>>> c6f86a4b67b830cfc62a0fb26b26f228e28e7e5d

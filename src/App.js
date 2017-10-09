@@ -17,7 +17,6 @@ export default class App extends Component {
             <Route exact path='/' component={WelcomePage} />
             <Route path='/vote' component={Vote} />
             <Route path='/result' component={Result} />
-
           </Switch>
         </Router>
       </div>
