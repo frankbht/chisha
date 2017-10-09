@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import WelcomePage from './page/welcome';
+import WelcomePage from './pages/welcome';
 import {
   Switch,
   BrowserRouter as Router,
