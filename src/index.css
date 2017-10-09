@@ -113,7 +113,13 @@ input:focus {
 .item-list {
   flex: 0 70%;
 }
+form {
+  margin:10px 700px;
+}
 
+button {
+  margin:0 700px;
+}
 .fix-btn {
   position: absolute;
   min-width: 100px;
