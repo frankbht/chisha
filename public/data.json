@@ -3,22 +3,31 @@
     {
       "name": "Asian Bistro",
       "category": "asian",
-      "distance": "5 miles"
+      "distance": "5 miles",
+      "vote" : 3,
+      "votedUser" : ["Abc Def", "Dewrg Awgwre", "Fwegf Fgwgwe"]
     },
     {
       "name": "Meidong Marget",
       "category": "asian",
-      "distance": "10 miles"
+      "distance": "10 miles",
+      "vote" : 5,
+      "votedUser" : ["Abc Def", "Dewrg Awgwre", "Fwegf Fgwgwe"]
     },
     {
       "name": "Pizza",
       "category": "Pizza",
-      "distance": "5 miles"
+      "distance": "5 miles",
+      "vote" : 100,
+      "votedUser" : ["Abc Def", "Dewrg Awgwre", "Fwegf Fgwgwe"]
+
     },
     {
       "name": "Wendy's",
       "category": "American",
-      "distance": "5 miles"
+      "distance": "5 miles",
+      "vote" : 20,
+      "votedUser" : ["Abc Def", "Dewrg Awgwre", "Fwegf Fgwgwe"]
     }
   ]
 }

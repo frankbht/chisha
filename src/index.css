@@ -97,6 +97,11 @@ input:focus {
   flex-direction: row;
 }
 
+.result {
+  display: flex;
+  flex-direction: row;
+}
+
 .side-bar {
   flex: 0 30%;
 }
@@ -108,7 +113,13 @@ input:focus {
 .item-list {
   flex: 0 70%;
 }
+form {
+  margin:10px 700px;
+}
 
+button {
+  margin:0 700px;
+}
 .fix-btn {
   position: absolute;
   min-width: 100px;
@@ -116,7 +127,29 @@ input:focus {
   bottom: 20px;
 }
 
+<<<<<<< HEAD
 .checkbox-group *{
   vertical-align: middle;
 }
 
+=======
+.colorfuldisplay{
+  height: 40px;
+  width: 40px;
+  font: italic bold 12px/30px Georgia, serif;
+  color: #4af900;
+  position: absolute;
+  font-size: 15px;
+  align-content: center;
+  background-image: url("images/BG.jpg");
+  /*background-color: blue;*/
+  right: 60px;
+  bottom: 30px;
+}
+
+.word{
+  border: 7px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+}
+>>>>>>> c6f86a4b67b830cfc62a0fb26b26f228e28e7e5d
