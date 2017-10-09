@@ -34,6 +34,7 @@ export default class ItemList extends Component {
               <div>
                 Distance: {element.Distance}
               </div>
+              <button className="fix-btn btn">Vote!</button>
             </div>
           </li>
         )

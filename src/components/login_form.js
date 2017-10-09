@@ -58,8 +58,8 @@ export default class Login extends Component {
             />
           </div>
           <div className="input-group-btn">
-            <input type="submit" className="btn btn-primary" value="Login" />
-            <input type="reset" className="btn btn-secondary" value="Cancel"/>
+            <input type="submit" className="btn-primary" value="Login" />
+            <input type="reset" className="btn-secondary" value="Cancel"/>
           </div>
         </form>
       </div>
