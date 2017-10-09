@@ -97,6 +97,11 @@ input:focus {
   flex-direction: row;
 }
 
+.result {
+  display: flex;
+  flex-direction: row;
+}
+
 .side-bar {
   flex: 0 30%;
 }
@@ -116,3 +121,22 @@ input:focus {
   bottom: 20px;
 }
 
+.colorfuldisplay{
+  height: 40px;
+  width: 40px;
+  font: italic bold 12px/30px Georgia, serif;
+  color: #4af900;
+  position: absolute;
+  font-size: 15px;
+  align-content: center;
+  background-image: url("images/BG.jpg");
+  /*background-color: blue;*/
+  right: 60px;
+  bottom: 30px;
+}
+
+.word{
+  border: 7px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+}
