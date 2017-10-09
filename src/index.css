@@ -11,6 +11,36 @@ input {
   padding: 0 12px;
 }
 
+select {
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-size: 14px;
+  padding: 5px; /* If you add too much padding here, the options won't show in IE */
+  background-color: #d3dce6;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  flex: 0 100%;
+  list-style: none;
+}
+
+li div {
+  margin: 5px;
+}
+
+.item-wrapper {
+  border: 1px;
+  border-style: solid;
+  border-color: #d3dce6;
+  border-radius: 7px;
+}
+
 input:focus {
   outline: none;
 }
@@ -22,5 +52,18 @@ input:focus {
 .login-form * {
   flex: 0 100%;
   width: 80%;
+}
+
+.vote {
+  display: flex;
+  flex-direction: row;
+}
+
+.side-bar {
+  flex: 0 30%;
+}
+
+.item-list {
+  flex: 0 70%;
 }
 
