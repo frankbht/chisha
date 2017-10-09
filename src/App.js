@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import Login from './components/login_form';
+import WelcomePage from './page/welcome';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div>
-        <Login />
+        <WelcomePage />
       </div>
     );
   }
 }
-
-export default App;
