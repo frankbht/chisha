@@ -1,0 +1,24 @@
+{
+  "options": [
+    {
+      "name": "Asian Bistro",
+      "category": "asian",
+      "distance": "5 miles"
+    },
+    {
+      "name": "Meidong Marget",
+      "category": "asian",
+      "distance": "10 miles"
+    },
+    {
+      "name": "Pizza",
+      "category": "Pizza",
+      "distance": "5 miles"
+    },
+    {
+      "name": "Wendy's",
+      "category": "American",
+      "distance": "5 miles"
+    }
+  ]
+}
