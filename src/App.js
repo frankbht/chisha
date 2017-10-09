@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom';
-import Login from './components/login_form';
 import Vote from './pages/vote';
 
 export default class App extends Component {

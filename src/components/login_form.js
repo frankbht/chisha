@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props){
     super(props);
 
@@ -12,6 +13,17 @@ export default class Login extends Component {
     this.onInput2Change = this.onInput2Change.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onCancelClick = this.onCancelClick.bind(this);
+    this.onSignUpButtonClick = this.onSignUpButtonClick.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('userInfo.json')
+      .then((response) => response.json())
+      .then((response) => {
+        this.setState((prevState, props) => ({
+          users: response.users
+        }))
+      })
   }
 
   onInput1Change(event) {
@@ -24,20 +36,33 @@ export default class Login extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    console.log(this.state.username, this.state.password)
-
+    if(this.match(this.state.username, this.state.password)){
     this.setState({ username: "",
                     password: ""
                   });
+    this.props.history.push("/vote");
+    }
+    else{
+      alert("Username Password not match")
+    }
   }
-
+  match(a,b){
+    return this.state.users.findIndex((user)=> user.email === a && user.password === b) + 1
+  }
   onCancelClick(event) {
     this.setState({ username: "",
                     password: ""
                   });
   }
 
+  onSignUpButtonClick() {
+    this.props.switchPage();
+  }
+
+
+
   render() {
+    console.log(this.state)
     return (
       <div>
         <form onSubmit={this.onFormSubmit} className="input-group">
@@ -62,7 +87,11 @@ export default class Login extends Component {
             <input type="reset" className="btn btn-secondary" value="Cancel"/>
           </div>
         </form>
+
+        <button onClick={this.onSignUpButtonClick}>Sign Up</button>
       </div>
     )
   }
 }
+
+export default withRouter(Login);
