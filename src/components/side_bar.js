@@ -29,23 +29,23 @@ export default class SideBar extends Component {
           <label className="checkbox-group-colomn"><b>Category</b>
             <div>
               <input type="checkbox" name="checkbox1"/>
-              <label for="checkbox1">Order Ahead</label>
+              <label htmlFor="checkbox1">Order Ahead</label>
             </div>
             <div>
               <input type="checkbox" name="checkbox2"/>
-              <label for="checkbox2">Rewards</label>
+              <label htmlFor="checkbox2">Rewards</label>
             </div>
             <div>
               <input type="checkbox" name="checkbox3"/>
-              <label for="checkbox3">Specials</label>
+              <label htmlFor="checkbox3">Specials</label>
             </div>
             <div>
               <input type="checkbox" name="checkbox4"/>
-              <label for="checkbox4">Try Something New</label>
+              <label htmlFor="checkbox4">Try Something New</label>
             </div>
             <div>
               <input type="checkbox" name="checkbox5"/>
-              <label for="checkbox5">Fast</label>
+              <label htmlFor="checkbox5">Fast</label>
             </div>
           </label>
         </div>       

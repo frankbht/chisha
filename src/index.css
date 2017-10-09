@@ -20,6 +20,18 @@ select {
   background-color: #d3dce6;
 }
 
+.btn {
+  float: auto;
+  height: 40px;
+  width: 100px;
+  background-color: rgb(235, 210, 28);
+  font-size: 15px;
+  color: white;
+  border: 7px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
 ul {
   display: flex;
   flex-direction: column;
@@ -34,7 +46,33 @@ li div {
   margin: 5px;
 }
 
+.nav-bar {
+  background-color: #d3dce6;
+  overflow: auto;
+}
+
+.navigation {
+  display: flex;
+  justify-content: flex-end;
+  flex-flow: row wrap;
+}
+
+.navigation li {
+  flex: 0;
+}
+
+.navigation a {
+  text-decoration: none;
+  padding: 5px 15px;
+  color: white;
+}
+
+.navigation a:hover {
+  color: rgb(100, 94, 94);
+}
+
 .item-wrapper {
+  position: relative;
   border: 1px;
   border-style: solid;
   border-color: #d3dce6;
@@ -63,6 +101,10 @@ input:focus {
   flex: 0 30%;
 }
 
+.side-bar div {
+  margin: 10px;
+}
+
 .item-list {
   flex: 0 70%;
 }
@@ -70,6 +112,16 @@ form {
   margin:10px 700px;
 }
 
+<<<<<<< HEAD
 button {
   margin:0 700px;
 }
+=======
+.fix-btn {
+  position: absolute;
+  min-width: 100px;
+  right: 60px;
+  bottom: 20px;
+}
+
+>>>>>>> c96e954c8d7b0712b2d9baaf6a1135bbe9a798f1
