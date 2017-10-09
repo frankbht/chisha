@@ -116,3 +116,7 @@ input:focus {
   bottom: 20px;
 }
 
+.checkbox-group *{
+  vertical-align: middle;
+}
+

@@ -45,7 +45,9 @@ export default class ItemList extends Component {
   render() {
     return (
       <div className="item-list">
-        <h4>Your decision matters.</h4>
+        <div>
+          <h1>Your decision matters.</h1>
+        </div>
         {
           this.state.options.length===0
           ? <p>Loading...</p>
