@@ -1,7 +1,6 @@
-git pull
+cd chisha
 
-git add .
-
-git commit -m "message"
-
-git push
+$git pull
+$git add .
+$git commit -m "message"
+$git push
