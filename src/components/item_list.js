@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom";
 import axios from 'axios';
 
-export default class ItemList extends Component {
+class ItemList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       options: []
     }
+    this.handleOnVote = this.handleOnVote.bind(this);
   }
 
   componentDidMount() {
@@ -18,6 +20,19 @@ export default class ItemList extends Component {
       .catch((err) => {
         alert(err);
       })
+  }
+
+  handleOnVote(restaurant) {
+    axios.defaults.headers.common['authorization'] = localStorage.getItem('token');
+    axios.post('http://104.236.28.32/result', {
+      restaurant
+    })
+    .then((response) => {
+      this.props.history.push("/result");
+    })
+    .catch(err => {
+      alert(err);
+    })
   }
 
 
@@ -36,7 +51,7 @@ export default class ItemList extends Component {
               <div>
                 Distance: {element.distance}
               </div>
-              <button className="fix-btn btn btn-primary">Vote!</button>
+              <button onClick={() => this.handleOnVote(element._id)} className="fix-btn btn btn-primary">Vote!</button>
             </div>
           </li>
         )
@@ -59,3 +74,5 @@ export default class ItemList extends Component {
     )
   }
 }
+
+export default withRouter(ItemList);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class VoteItemList extends Component {
     constructor(props) {
@@ -9,11 +10,10 @@ export default class VoteItemList extends Component {
     }
 
     componentDidMount() {
-        fetch('data.json')
-            .then((response) => response.json())
+        axios.get('http://104.236.28.32/result')
             .then((response) => {
                 this.setState((prevState, props) => ({
-                    options: response.options
+                    options: response.data.results
                 }))
             })
 
@@ -22,7 +22,7 @@ export default class VoteItemList extends Component {
 
     renderItem() {
         this.state.options.sort(function(a,b){
-            return b.vote - a.vote;
+            return b.votedBy.length - a.votedBy.length;
         })
         return (
             this.state.options.map((element, index) => {
@@ -30,7 +30,7 @@ export default class VoteItemList extends Component {
                 <li key={index}>
                         <div className="item-wrapper">
                             <div>
-                                Name: {element.name}
+                                Name: {element.restaurant}
                             </div>
                             <div>
                                 Category: {element.category}
@@ -42,7 +42,7 @@ export default class VoteItemList extends Component {
                                 Vote: {element.vote}
                             </div>
                             <div>
-                                Voted User: {element.votedUser.map(function(user){
+                                Voted User: {element.votedBy.map(function(user){
                                     return user + ", "
                             }).concat(" and waiting for your vote!")}
                             </div>
