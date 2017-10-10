@@ -8,14 +8,10 @@ class Login extends Component {
     this.state = { username: "" ,
                    password: ""
                  };
-
-    this.onInput1Change = this.onInput1Change.bind(this);
-    this.onInput2Change = this.onInput2Change.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onCancelClick = this.onCancelClick.bind(this);
     this.onSignUpButtonClick = this.onSignUpButtonClick.bind(this);
   }
-
   componentDidMount() {
     fetch('userInfo.json')
       .then((response) => response.json())
@@ -25,18 +21,9 @@ class Login extends Component {
         }))
       })
   }
-
-  onInput1Change(event) {
-    this.setState({ username: event.target.value });
-  }
-
-  onInput2Change(event) {
-    this.setState({ password: event.target.value });
-  }
-
   onFormSubmit(event) {
     event.preventDefault();
-    if(this.match(this.state.username, this.state.password)){
+    if(this.validateUser(this.state.username, this.state.password)){
     this.setState({ username: "",
                     password: ""
                   });
@@ -46,31 +33,29 @@ class Login extends Component {
       alert("Username Password not match")
     }
   }
-  match(a,b){
-    return this.state.users.findIndex((user)=> user.email === a && user.password === b) + 1
+  validateUser(username, password){
+    // the index of user starts from 0
+    return this.state.users.findIndex((user)=> user.email === username && user.password === password) + 1
   }
   onCancelClick(event) {
     this.setState({ username: "",
                     password: ""
                   });
   }
-
   onSignUpButtonClick() {
     this.props.switchPage();
   }
-
-
 
   render() {
     console.log(this.state)
     return (
       <div>
-        <form onSubmit={this.onFormSubmit} className="input-group">
+        <form onSubmit={this.onFormSubmit} className="login-form">
           <div>
             <input
               placeholder="Email"
               value={this.state.username}
-              onChange={this.onInput1Change}
+              onChange={(event)=>{this.setState({username: event.target.value})}}
               type="text"
             />
           </div>
@@ -78,17 +63,16 @@ class Login extends Component {
             <input
               placeholder="Password"
               value={this.state.password}
-              onChange={this.onInput2Change}
+              onChange={(event)=>{this.setState({password: event.target.value})}}
               type="password"
             />
           </div>
           <div className="input-group-btn">
-            <input type="submit" className="btn-primary" value="Login" />
-            <input type="reset" className="btn-secondary" value="Cancel"/>
+            <input type="submit" className="btn btn-primary" value="Login" />
+            <input type="reset" className="btn btn-primary" value="Cancel"/>
+            <input type="button" className="btn btn-primary" value="SignUp" onClick={this.onSignUpButtonClick} />
           </div>
         </form>
-
-        <button onClick={this.onSignUpButtonClick}>Sign Up</button>
       </div>
     )
   }

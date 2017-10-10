@@ -5,10 +5,12 @@ body {
 }
 
 input {
+  width: 400px;
   height: 50px;
   border: 1px solid #d3dce6;
   border-radius: 8px;
   padding: 0 12px;
+  margin-top: 10px;
 }
 
 select {
@@ -18,18 +20,6 @@ select {
   font-size: 14px;
   padding: 5px; /* If you add too much padding here, the options won't show in IE */
   background-color: #d3dce6;
-}
-
-.btn {
-  float: auto;
-  height: 40px;
-  width: 100px;
-  background-color: rgb(235, 210, 28);
-  font-size: 15px;
-  color: white;
-  border: 7px solid transparent;
-  border-radius: 7px;
-  text-decoration: none;
 }
 
 ul {
@@ -82,15 +72,6 @@ li div {
 input:focus {
   outline: none;
 }
-.login-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.login-form * {
-  flex: 0 100%;
-  width: 80%;
-}
 
 .vote {
   display: flex;
@@ -108,15 +89,6 @@ input:focus {
 .item-list {
   flex: 0 70%;
 }
-form {
-  margin:10px 700px;
-}
-
-<<<<<<< HEAD
-button {
-  margin:0 700px;
-}
-=======
 .fix-btn {
   position: absolute;
   min-width: 100px;
@@ -124,4 +96,48 @@ button {
   bottom: 20px;
 }
 
->>>>>>> c96e954c8d7b0712b2d9baaf6a1135bbe9a798f1
+/* Aaron */
+.login-form {
+  width: 400px;
+  height: 400px;
+  margin: 150px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form .input-group-btn {
+  display: flex;
+  justify-content: space-around;
+}
+
+.login-form .input-group-btn input {
+  flex-basis: 30%;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.input-group-btn input {
+    display: inline;
+}

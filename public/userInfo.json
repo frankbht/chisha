@@ -2,22 +2,22 @@
   "users": [
     {
       "name": "Wang",
-      "email": "123@qq.com",
+      "email": "123",
       "password": "123"
     },
     {
       "name": "Li",
-      "email": "1234@qq.com",
+      "email": "1234",
       "password": "1234"
     },
     {
       "name": "Sun",
-      "email": "12345@qq.com",
+      "email": "12345",
       "password": "12345"
     },
     {
       "name": "Ding",
-      "email": "123456@qq.com",
+      "email": "123456",
       "password": "123456"
     }
   ]

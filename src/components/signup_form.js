@@ -8,13 +8,8 @@ export default class Signup extends Component {
                   password:"",
                   confirmPassword:""
                 };
-    this.onInput1Change = this.onInput1Change.bind(this);
-    this.onInput2Change = this.onInput2Change.bind(this);
-    this.onInput3Change = this.onInput3Change.bind(this);
-    this.onInput4Change = this.onInput4Change.bind(this);
     this.onSignUpFormSubmit = this.onSignUpFormSubmit.bind(this);
   }
-
   componentDidMount() {
     fetch('userInfo.json')
       .then((response) => response.json())
@@ -24,39 +19,25 @@ export default class Signup extends Component {
         }))
       })
   }
-
-  onInput1Change(event) {
-    this.setState({ name: event.target.value });
-  }
-
-  onInput2Change(event) {
-    this.setState({ username: event.target.value });
-  }
-  onInput3Change(event) {
-    this.setState({ password: event.target.value });
-  }
-  onInput4Change(event) {
-    this.setState({ confirmPassword: event.target.value });
-  }
   onSignUpFormSubmit(event) {
     event.preventDefault();
     if(this.state.password === this.state.confirmPassword){
       this.props.switchPage();
     }
     else{
-      alert("password not match")
+      alert("Username and password does not match, please type in again")
     }
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.onSignUpFormSubmit} className="input-group">
+        <form onSubmit={this.onSignUpFormSubmit} className="login-form">
           <div>
             <input
               placeholder="Name"
               value={this.state.name}
-              onChange={this.onInput1Change}
+              onChange={(event)=>{this.setState({name: event.target.value})}}
               type="text"
             />
           </div>
@@ -64,7 +45,7 @@ export default class Signup extends Component {
             <input
               placeholder="Email"
               value={this.state.username}
-              onChange={this.onInput2Change}
+              onChange={(event)=>{this.setState({username: event.target.value})}}
               type="text"
             />
           </div>
@@ -72,7 +53,7 @@ export default class Signup extends Component {
             <input
               placeholder="Password"
               value={this.state.password}
-              onChange={this.onInput3Change}
+              onChange={(event)=>{this.setState({password: event.target.value})}}
               type="password"
             />
           </div>
@@ -80,7 +61,7 @@ export default class Signup extends Component {
             <input
               placeholder="Confirm Password"
               value={this.state.confirmPassword}
-              onChange={this.onInput4Change}
+              onChange={(event)=>{this.setState({confirmPassword: event.target.value})}}
               type="password"
             />
           </div>
