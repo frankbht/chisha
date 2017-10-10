@@ -30,16 +30,16 @@ export default class VoteItemList extends Component {
                 <li key={index}>
                         <div className="item-wrapper">
                             <div>
-                                Name: {element.restaurant}
+                                Name: {element.name}
                             </div>
                             <div>
                                 Category: {element.category}
                             </div>
                             <div>
-                                Distance: {element.Distance}
+                                Distance: {element.distance}
                             </div>
                             <div>
-                                Vote: {element.vote}
+                                Vote: {element.votedBy.length}
                             </div>
                             <div>
                                 Voted User: {element.votedBy.map(function(user){
