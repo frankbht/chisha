@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { withRouter } from "react-router-dom";
+import axios from 'axios';
 
 class Login extends Component {
   constructor(props){
@@ -36,15 +37,18 @@ class Login extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    if(this.match(this.state.username, this.state.password)){
-    this.setState({ username: "",
-                    password: ""
-                  });
-    this.props.history.push("/vote");
-    }
-    else{
-      alert("Username Password not match")
-    }
+    axios.post('http://104.236.28.32/signin', {
+      username: this.state.username,
+      password: this.state.password
+    })
+    .then((response) => {
+      localStorage.setItem('token', response.data.token);
+      this.props.history.push("/vote");
+    })
+    .catch((err) => {
+      alert(err)
+    })
+    
   }
   match(a,b){
     return this.state.users.findIndex((user)=> user.email === a && user.password === b) + 1

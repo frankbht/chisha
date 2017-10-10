@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import SideBar from '../components/side_bar';
 import VoteItemList from '../components/voteditem_list';
 import NavBar from "../components/nav_bar";
 

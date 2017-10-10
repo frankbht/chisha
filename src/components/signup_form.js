@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Signup extends Component {
   constructor(props){
@@ -40,12 +41,20 @@ export default class Signup extends Component {
   }
   onSignUpFormSubmit(event) {
     event.preventDefault();
-    if(this.state.password === this.state.confirmPassword){
+    if(this.state.password !== this.state.confirmPassword) {
+      alert("password not match");
+    }
+    axios.post('http://104.236.28.32/signup', {
+      username: this.state.username,
+      password: this.state.password
+    })
+    .then((response) => {
+      localStorage.setItem('token', response.data.token);
       this.props.switchPage();
-    }
-    else{
-      alert("password not match")
-    }
+    })
+    .catch((err) => {
+      alert(err);
+    })
   }
 
   render() {
