@@ -78,6 +78,11 @@ input:focus {
   flex-direction: row;
 }
 
+.result {
+  display: flex;
+  flex-direction: row;
+}
+
 .side-bar {
   flex: 0 30%;
 }
@@ -89,6 +94,10 @@ input:focus {
 .item-list {
   flex: 0 70%;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 505c69d5e0aedb9e6a3c4e7b5f8cb7bf896b19d3
 .fix-btn {
   position: absolute;
   min-width: 100px;
@@ -96,6 +105,7 @@ input:focus {
   bottom: 20px;
 }
 
+<<<<<<< HEAD
 /* Aaron */
 .login-form {
   width: 400px;
@@ -140,4 +150,42 @@ input:focus {
 
 .input-group-btn input {
     display: inline;
+=======
+.checkbox-group *{
+  vertical-align: middle;
+}
+
+.colorfuldisplay{
+  height: 40px;
+  width: 40px;
+  font: italic bold 12px/30px Georgia, serif;
+  color: #4af900;
+  position: absolute;
+  font-size: 15px;
+  align-content: center;
+  background-image: url("images/BG.jpg");
+  /*background-color: blue;*/
+  right: 60px;
+  bottom: 30px;
+}
+
+.word{
+  border: 7px solid transparent;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+.restaurant {
+  width: 60%;
+  margin: auto;
+}
+
+.restaurant-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-form * {
+  flex: 0 100%;
+>>>>>>> 505c69d5e0aedb9e6a3c4e7b5f8cb7bf896b19d3
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class ItemList extends Component {
   constructor(props) {
@@ -9,12 +10,13 @@ export default class ItemList extends Component {
   }
 
   componentDidMount() {
-    fetch('data.json')
-      .then((response) => response.json())
+    axios.defaults.headers.common['authorization'] = localStorage.getItem('token');
+    axios.get('http://104.236.28.32/restaurant')
       .then((response) => {
-        this.setState((prevState, props) => ({
-          options: response.options
-        }))
+        this.setState({options: response.data.restaurants})
+      })
+      .catch((err) => {
+        alert(err);
       })
   }
 
@@ -32,7 +34,7 @@ export default class ItemList extends Component {
                 Category: {element.category}
               </div>
               <div>
-                Distance: {element.Distance}
+                Distance: {element.distance}
               </div>
               <button className="fix-btn btn btn-primary">Vote!</button>
             </div>
@@ -45,7 +47,9 @@ export default class ItemList extends Component {
   render() {
     return (
       <div className="item-list">
-        <h4>Your decision matters.</h4>
+        <div>
+          <h1>Your decision matters.</h1>
+        </div>
         {
           this.state.options.length===0
           ? <p>Loading...</p>
