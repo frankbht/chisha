@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "rc": "^1.2.1",
+    "rc-progress": "^2.2.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",

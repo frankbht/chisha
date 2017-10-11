@@ -1,15 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import LoadBar from './load_bar';
 
 export default class VoteItemList extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            percent: 0,
             options: []
         }
+        this.increase = this.increase.bind(this);
+        this.restart = this.restart.bind(this);
     }
 
     componentDidMount() {
+        this.increase()
         axios.get('http://104.236.28.32/result')
             .then((response) => {
                 this.setState((prevState, props) => ({
@@ -17,6 +22,40 @@ export default class VoteItemList extends Component {
                 }))
             })
 
+    }
+    increase(){
+        let percent = this.state.percent + 1;
+        if (percent >= 100) {
+            clearTimeout(this.tm);
+            this.setState({percent:0});
+            percent = 0;
+            this.increase();
+            if(this.state.options.length > 0){
+                return;
+            }
+        }
+        this.setState({ percent });
+        this.tm = setTimeout(this.increase, 20);
+    }
+
+    restart(){
+        clearTimeout(this.tm);
+        this.setState({ percent: 0 }, () => {
+            this.increase();
+        });
+    }
+
+    loadingBar(number) {
+        if(number === 0){
+            return(
+                <LoadBar/>
+            )
+        }
+        else{
+            return(
+                <ul>{this.renderItem()}</ul>
+            )
+        }
     }
 
 
@@ -46,7 +85,7 @@ export default class VoteItemList extends Component {
                                     return user + ", "
                             }).concat(" and waiting for your vote!")}
                             </div>
-                            <p className="colorfuldisplay word">{element.vote}</p>
+                            <p className="colorfuldisplay word">{element.votedBy.length}</p>
                         </div>
                     </li>
                 )
@@ -60,9 +99,7 @@ export default class VoteItemList extends Component {
             <div className="item-list">
                 <h4>Your decision matters.</h4>
                 {
-                    this.state.options.length===0
-                        ? <p>Loading...</p>
-                        : <ul>{this.renderItem()}</ul>
+                   this.loadingBar(this.state.options.length)
                 }
             </div>
         )
