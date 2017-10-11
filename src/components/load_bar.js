@@ -27,7 +27,7 @@ export default class LoadBar extends Component {
         if(this.refs.myref){
             this.setState({percent});
         }
-        this.tm = setTimeout(this.increase, 1000);
+        this.tm = setTimeout(this.increase, 10);
     }
 
     render(){
