@@ -61,11 +61,27 @@ class ItemList extends Component {
     )
   }
 
+  loadingBar(number) {
+    if(number === 0){
+      return(
+          <LoadBar/>
+        )
+    }
+    else{
+      return(
+      <ul>{this.renderItem()}</ul>
+      )
+    }
+  }
+
   render() {
     return (
       <div className="item-list">
         <div>
           <h1>Your decision matters.</h1>
+            {
+              this.loadingBar(this.state.options.length)
+            }
         </div>
           <LoadBar/>
       </div>
